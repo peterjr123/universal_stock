@@ -12,8 +12,6 @@ phases:
   pre_build:
     commands:
       - echo "Fetching parameters"
-      - export API_KEY
-      - export API_SECRET
       - echo "Parameters fetched"
       - echo "Generating application.properties file"
       - "echo 'api.secret.key=${API_KEY}' > src/main/resources/application-secrets.properties"
@@ -26,7 +24,11 @@ phases:
     on-failure: ABORT
     commands:
       - "./gradlew build"
+  post_build:
+    commands:
+      - "zip build/libs/artifact.zip build/libs/*.war"
 artifacts:
   files:
     - "build/libs/*"
+  name: "artifact-after-build-$(%Y-%m-%d-%M:%S).zip"
   discard-paths: yes
