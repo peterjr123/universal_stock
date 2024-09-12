@@ -7,20 +7,17 @@ phases:
   pre_build:
     commands:
       - echo "Fetching parameters"
-      - API_KEY=$(aws ssm get-parameter --name "KIS-API-KEY" --with-decryption --query "Parameter.Value" --output text)
-      - API_SECRET=$(aws ssm get-parameter --name "KIS-API-SECRET" --with-decryption --query "Parameter.Value" --output text)
+      - "API_KEY=$(aws ssm get-parameter --name 'KIS-API-KEY' --with-decryption --query 'Parameter.Value' --output text)"
+      - "API_SECRET=$(aws ssm get-parameter --name 'KIS-API-SECRET' --with-decryption --query 'Parameter.Value' --output text)"
       - export API_KEY
       - export API_SECRET
       - echo "Parameters fetched"
-
       - echo "Generating application.properties file"
-      - echo "api.secret.key=${API_KEY}" > src/main/resources/application-secrets.properties
-      - echo "api.secret.secret=${API_SECRET}" >> src/main/resources/application-secrets.properties
-
+      - "echo 'api.secret.key=${API_KEY}' > src/main/resources/application-secrets.properties"
+      - "echo 'api.secret.secret=${API_SECRET}' >> src/main/resources/application-secrets.properties"
       - echo "Generating application.yml file"
-      - echo "token: placeholder" > src/main/resources/application-secrets.yml
-      - echo "tokenType: Bearer" >> src/main/resources/application-secrets.yml
-
+      - "echo 'token: placeholder' > src/main/resources/application-secrets.yml"
+      - "echo 'tokenType: Bearer' >> src/main/resources/application-secrets.yml"
       - chmod +x gradlew
   build:
     on-failure: ABORT
