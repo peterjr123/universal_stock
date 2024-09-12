@@ -20,9 +20,4 @@ public class StockPriceHistoryTest {
             System.out.println(date + " " + stockPriceHistory.getPrice(date));
         }
     }
-
-    @Test
-    public void logTest() {
-        logger.debug("Hello world!");
-    }
 }

@@ -12,13 +12,13 @@ import java.util.List;
 public class StockRepositoryProxyTest {
     @Test
     public void getStockPriceHistory() throws JsonProcessingException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("/META-INF/applicationContext.xml");
-
-        StockRepositoryProxy proxy = context.getBean(StockRepositoryProxy.class);
-        StockPriceHistory history = proxy.getStockPriceHistory();
-        List<String> dates = history.getDateAscending();
-        for(String date : dates) {
-            System.out.println("date: " + date + " price: " + history.getPrice(date));
-        }
+//        ApplicationContext context = new ClassPathXmlApplicationContext("/META-INF/applicationContext.xml");
+//
+//        StockRepositoryProxy proxy = context.getBean(StockRepositoryProxy.class);
+//        StockPriceHistory history = proxy.getStockPriceHistory();
+//        List<String> dates = history.getDateAscending();
+//        for(String date : dates) {
+//            System.out.println("date: " + date + " price: " + history.getPrice(date));
+//        }
     }
 }
