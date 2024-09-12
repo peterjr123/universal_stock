@@ -31,5 +31,5 @@ phases:
 artifacts:
   files:
     - "artifact.zip"
-  name: "artifact-after-build-$(%Y-%m-%d-%M:%S).zip"
+  name: artifact-after-build-$(%Y-%m-%d-%M:%S).zip
   discard-paths: yes
