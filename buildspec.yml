@@ -28,10 +28,9 @@ phases:
     commands:
       - echo "Generating zip file"
       - "zip build/libs/artifact.zip build/libs/*.war"
-      - ls
       - "ls build/libs"
 artifacts:
   files:
-    - "build/libs/*"
+    - "build/libs/artifact.zip"
   name: "artifact-after-build-$(%Y-%m-%d-%M:%S).zip"
   discard-paths: yes
