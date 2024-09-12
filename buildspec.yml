@@ -26,7 +26,10 @@ phases:
       - "./gradlew build"
   post_build:
     commands:
+      - echo "Generating zip file"
       - "zip build/libs/artifact.zip build/libs/*.war"
+      - ls
+      - "ls build/libs"
 artifacts:
   files:
     - "build/libs/*"
