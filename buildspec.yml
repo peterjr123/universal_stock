@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+  parameter-store:
+    API_KEY: "KIS-API-KEY"
+    API_SECRET: "KIS-API-SECRET"
+
 phases:
   install:
     runtime-versions:
@@ -7,8 +12,6 @@ phases:
   pre_build:
     commands:
       - echo "Fetching parameters"
-      - "API_KEY=$(aws ssm get-parameter --name 'KIS-API-KEY' --with-decryption --query 'Parameter.Value' --output text)"
-      - "API_SECRET=$(aws ssm get-parameter --name 'KIS-API-SECRET' --with-decryption --query 'Parameter.Value' --output text)"
       - export API_KEY
       - export API_SECRET
       - echo "Parameters fetched"
