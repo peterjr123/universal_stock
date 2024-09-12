@@ -26,10 +26,11 @@ phases:
       - "./gradlew build"
   post_build:
     commands:
+      - "cp -r script build/libs"
+      - "cp appspec.yml build/libs"
       - echo "Generating zip file"
-      - "zip -j artifact.zip build/libs/*.war"
+      - "zip -j artifact.zip build/libs/*"
 artifacts:
   files:
     - "artifact.zip"
-  name: artifact-after-build-$(%Y-%m-%d-%M:%S).zip
-  discard-paths: yes
+  name: artifact-after-build-$(%Y-%m-%d-%M:%S)
