@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: latest
+  pre_build:
+    commands:
+      - chmod +x gradlew
+  build:
+    on-failure: ABORT
+    commands:
+      - "./gradlew build"
+artifacts:
+  files:
+    - "build/libs/*"
+  discard-paths: yes
