@@ -29,8 +29,9 @@ phases:
       - "cp -r scripts build/libs"
       - "cp appspec.yml build/libs"
       - echo "Generating zip file"
-      - "zip -j artifact.zip build/libs/*"
+      - "cd build/libs"
+      - "zip -r artifact-after-build-$(date +%Y-%m-%d-%M:%S).zip *"
 artifacts:
   files:
-    - "artifact.zip"
-  name: artifact-after-build-$(%Y-%m-%d-%M:%S)
+    - "*.zip"
+  base-directory: 'build/libs'
