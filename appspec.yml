@@ -2,9 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/artifacts/
+    destination: /home/ubuntu/deploy/
 hooks:
   BeforeInstall:
+    - location: scripts/remove_artifact.sh
+      timeout: 300
+      runas: root
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
