@@ -1,0 +1,1 @@
+sudo tail -n 50 ${CATALINA_HOME}/logs/catalina.out
