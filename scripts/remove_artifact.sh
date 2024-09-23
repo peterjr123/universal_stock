@@ -1,5 +1,5 @@
 echo "move artifact"
-mv ../*.sh ${ARTIFACT_HOME}
+mv ${DEPLOY_HOME}/*.war ${ARTIFACT_HOME}
 
 echo "clean deploy folder"
 rm -rf  ${DEPLOY_HOME}
