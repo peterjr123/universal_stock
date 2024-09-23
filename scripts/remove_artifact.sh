@@ -1,6 +1,6 @@
 echo "move artifact"
-mv ../*.sh /home/ubuntu/artifacts/
+mv ../*.sh ${ARTIFACT_HOME}
 
 echo "clean deploy folder"
-rm -rf  /home/ubuntu/deploy/
-mkdir /home/ubuntu/deploy/
+rm -rf  ${DEPLOY_HOME}
+mkdir ${DEPLOY_HOME}
