@@ -1,1 +1,2 @@
-echo start_server
+echo "execute start_server.sh"
+

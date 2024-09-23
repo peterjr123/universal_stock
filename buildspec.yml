@@ -8,7 +8,7 @@ env:
 phases:
   install:
     runtime-versions:
-      java: latest
+      java: 17.0.10
   pre_build:
     commands:
       - echo "Fetching parameters"
