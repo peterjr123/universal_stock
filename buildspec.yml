@@ -30,5 +30,4 @@ phases:
       - "cp appspec.yml build/libs"
 artifacts:
   files:
-    - "build/libs"
-  base-directory: 'build/libs'
+    - "build/libs/*"
