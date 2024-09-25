@@ -1,5 +1,10 @@
-echo "execute deploy.sh"
+CATALINA_HOME=/home/ubuntu/apache-tomcat-10.1.20
+DEPLOY_HOME=/home/ubuntu/deploy/
+ARTIFACT_HOME=/home/ubuntu/artifacts/
+
 # copy war file to CATALINA_HOME
+echo "execute deploy.sh"
+
 filename=`basename ../*.war`
 echo "copy ${filename} to ${CATALINA_HOME}"
 cp ../*.war ${CATALINA_HOME}/webapps
